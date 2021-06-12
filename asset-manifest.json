@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/InterviewAssist/static/css/main.eb1d09e4.chunk.css",
-    "main.js": "/InterviewAssist/static/js/main.30d23301.chunk.js",
-    "main.js.map": "/InterviewAssist/static/js/main.30d23301.chunk.js.map",
+    "main.css": "/InterviewAssist/static/css/main.65826db1.chunk.css",
+    "main.js": "/InterviewAssist/static/js/main.b8bbcfb9.chunk.js",
+    "main.js.map": "/InterviewAssist/static/js/main.b8bbcfb9.chunk.js.map",
     "runtime-main.js": "/InterviewAssist/static/js/runtime-main.b1012c16.js",
     "runtime-main.js.map": "/InterviewAssist/static/js/runtime-main.b1012c16.js.map",
-    "static/js/2.f3e928f4.chunk.js": "/InterviewAssist/static/js/2.f3e928f4.chunk.js",
-    "static/js/2.f3e928f4.chunk.js.map": "/InterviewAssist/static/js/2.f3e928f4.chunk.js.map",
+    "static/js/2.74e2f919.chunk.js": "/InterviewAssist/static/js/2.74e2f919.chunk.js",
+    "static/js/2.74e2f919.chunk.js.map": "/InterviewAssist/static/js/2.74e2f919.chunk.js.map",
     "index.html": "/InterviewAssist/index.html",
-    "static/css/main.eb1d09e4.chunk.css.map": "/InterviewAssist/static/css/main.eb1d09e4.chunk.css.map",
-    "static/js/2.f3e928f4.chunk.js.LICENSE.txt": "/InterviewAssist/static/js/2.f3e928f4.chunk.js.LICENSE.txt"
+    "static/css/main.65826db1.chunk.css.map": "/InterviewAssist/static/css/main.65826db1.chunk.css.map",
+    "static/js/2.74e2f919.chunk.js.LICENSE.txt": "/InterviewAssist/static/js/2.74e2f919.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b1012c16.js",
-    "static/js/2.f3e928f4.chunk.js",
-    "static/css/main.eb1d09e4.chunk.css",
-    "static/js/main.30d23301.chunk.js"
+    "static/js/2.74e2f919.chunk.js",
+    "static/css/main.65826db1.chunk.css",
+    "static/js/main.b8bbcfb9.chunk.js"
   ]
 }
