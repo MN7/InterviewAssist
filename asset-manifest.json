@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/InterviewAssist.git/static/css/main.eb1d09e4.chunk.css",
+    "main.js": "/InterviewAssist.git/static/js/main.30d23301.chunk.js",
+    "main.js.map": "/InterviewAssist.git/static/js/main.30d23301.chunk.js.map",
+    "runtime-main.js": "/InterviewAssist.git/static/js/runtime-main.82477972.js",
+    "runtime-main.js.map": "/InterviewAssist.git/static/js/runtime-main.82477972.js.map",
+    "static/js/2.f3e928f4.chunk.js": "/InterviewAssist.git/static/js/2.f3e928f4.chunk.js",
+    "static/js/2.f3e928f4.chunk.js.map": "/InterviewAssist.git/static/js/2.f3e928f4.chunk.js.map",
+    "index.html": "/InterviewAssist.git/index.html",
+    "static/css/main.eb1d09e4.chunk.css.map": "/InterviewAssist.git/static/css/main.eb1d09e4.chunk.css.map",
+    "static/js/2.f3e928f4.chunk.js.LICENSE.txt": "/InterviewAssist.git/static/js/2.f3e928f4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.82477972.js",
+    "static/js/2.f3e928f4.chunk.js",
+    "static/css/main.eb1d09e4.chunk.css",
+    "static/js/main.30d23301.chunk.js"
+  ]
+}
