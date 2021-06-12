@@ -1,0 +1,45 @@
+.App {
+  font-family: sans-serif;
+  /* text-align: center; */
+}
+
+div > code {
+  text-align: left;
+  background-color: black;
+  color: yellow;
+  font-size: 20px;
+}
+
+div > code > span {
+  display: block;
+  background-color: black;
+}
+
+div > button {
+  max-width: 70px;
+}
+
+.sameLine {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.sameLine button {
+  max-width: 120px;
+  margin: 0 5px;
+}
+
+.sameLine input {
+  max-width: 70px;
+  margin: 0 10px;
+}
+
+.sameCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.goodjob {
+  background-color: chartreuse;
+}
