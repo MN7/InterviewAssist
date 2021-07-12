@@ -11,11 +11,12 @@ export default class MyClass extends Component {
     super(props);
     this.state = {
       chosenQ: -1,
+      chosenLang: "js",
     };
   }
 
   render() {
-    const { chosenQ } = this.state;
+    const { chosenQ, chosenLang } = this.state;
     const codeQBgn = totalSnipQuestions;
     const totalQuestions = totalSnipQuestions + totalCodeQuestions;
     const clearQbtn = (
@@ -28,9 +29,25 @@ export default class MyClass extends Component {
         Clear Question
       </button>
     );
+    const flipLanguage = () => {
+      this.setState({ chosenLang: chosenLang === "js" ? "ts" : "js" });
+    };
 
     const retval = (
       <>
+        <h2>
+          Language preference:{" "}
+          {chosenLang === "js" ? "JavaScript" : "TypeScript"}
+        </h2>
+        <h4>
+          Use{" "}
+          {
+            <button className="tcButton" onClick={flipLanguage}>
+              {chosenLang === "js" ? "TypeScript" : "JavaScript"}
+            </button>
+          }{" "}
+          instead
+        </h4>
         <div className="sameLine">
           <div className="sameCol widthQBox">
             <h4>Understanding Code Snippets</h4>
@@ -61,7 +78,7 @@ export default class MyClass extends Component {
           </div>
           {chosenQ !== -1 &&
             (chosenQ < codeQBgn ? (
-              <SnipQ0 chosenQ={chosenQ} />
+              <SnipQ0 chosenQ={chosenQ} chosenLang={chosenLang} />
             ) : (
               <CodeQ0 chosenQ={chosenQ - codeQBgn} />
             ))}

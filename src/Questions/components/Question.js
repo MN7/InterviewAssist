@@ -3,6 +3,9 @@ import TestCases from "./TestCases";
 import "../../styles.css";
 
 const Question = ({ qNum, qTitle, qSourceCode, testCasesArr, questFunc }) => {
+  const { pName, pType, pValue } = testCasesArr[0].inpParamsArr[0];
+  let line1suffix = pName + ": ";
+  line1suffix += pType === "array" ? "[" + pValue + "]" : pValue;
   const resultElt = (
     <div key={qNum} className="sameCol">
       <h4>
@@ -12,9 +15,7 @@ const Question = ({ qNum, qTitle, qSourceCode, testCasesArr, questFunc }) => {
         <pre>
           {qSourceCode.split("\n").map((ln, i) => (
             <code key={i}>
-              {(i === 0
-                ? `// Consider ${testCasesArr[0].inpParamsArr[0].pName}: ${testCasesArr[0].inpParamsArr[0].pValue}`
-                : ln) + "\n"}
+              {(i === 0 ? `${ln} ${line1suffix}` : ln) + "\n"}
             </code>
           ))}
         </pre>

@@ -10,7 +10,6 @@ export default function App() {
   return (
     <div className="App">
       <h1>Welcome to Technical Discussion - {dt}</h1>
-      <h2>JavaScript Knowledge & Experience preferred</h2>
       <MyClass />
     </div>
   );

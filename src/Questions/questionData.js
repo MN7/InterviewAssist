@@ -6,6 +6,10 @@ export const snipQarray = [
       function f1(v) {
         return Math.round( v * 100 ) / 100;
       };`,
+    sourceCodeTS: `// Consider
+      function f1(v: number): number {
+        return Math.round( v * 100 ) / 100;
+      };`,
     questFunc: (arr) => {
       return Math.round(arr[0].pValue * 100) / 100;
     },
@@ -25,6 +29,12 @@ export const snipQarray = [
     title: "Paragraph-split",
     sourceCode: `// Consider
       const f2 = (paragraph) => {
+        return Math.max(
+          ...paragraph.split(' ').map(w => w.length)
+          );
+      };`,
+    sourceCodeTS: `// Consider
+      const f2 = (paragraph: string) => {
         return Math.max(
           ...paragraph.split(' ').map(w => w.length)
           );
@@ -68,6 +78,15 @@ export const snipQarray = [
         }
         return res;
       };`,
+    sourceCodeTS: `// Consider
+      function f3 (arr: Array<string>): { [key: string] : number} {
+        const res: { [key: string] : number} = {}
+        for (let i = 0; i < arr.length; i++) {
+          const val = res[arr[i]] || 0;
+          res[arr[i]] = val + 1;
+        }
+        return res;
+      };`,
     questFunc: (arr) => {
       return JSON.stringify(
         arr[0].pValue.reduce(
@@ -104,6 +123,20 @@ export const snipQarray = [
     title: "Array manipulation",
     sourceCode: `// Consider
       function f4(inpArr, inpIdx = 0, outArr = []) {
+        if (inpIdx === inpArr.length) return outArr.pop();
+        for (let outIdx = 0; outIdx < outArr.length; outIdx++) {
+          if (inpArr[inpIdx] < outArr[outIdx]) {
+            return f4(inpArr, inpIdx + 1, [
+              ...outArr.slice(0, outIdx),
+              inpArr[inpIdx],
+              ...outArr.slice(outIdx)
+            ]);
+          }
+        }
+        return f4(inpArr, inpIdx + 1, outArr.concat(inpArr[inpIdx]));
+      };`,
+    sourceCodeTS: `// Consider
+      function f4(inpArr: Array<any>, inpIdx: number = 0, outArr: Array<any> = []): any  {
         if (inpIdx === inpArr.length) return outArr.pop();
         for (let outIdx = 0; outIdx < outArr.length; outIdx++) {
           if (inpArr[inpIdx] < outArr[outIdx]) {
