@@ -3,6 +3,24 @@
   /* text-align: center; */
 }
 
+div > pre {
+  counter-reset: line;
+}
+
+div > pre > code {
+  counter-increment: line;
+  text-align: left;
+  background-color: black;
+  color: yellow;
+  font-size: 20px;
+}
+
+div > pre > code:before {
+  content: counter(line);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 div > code {
   text-align: left;
   background-color: black;
@@ -24,14 +42,33 @@ div > button {
   justify-content: flex-start;
 }
 
-.sameLine button {
-  max-width: 120px;
+.tcButton {
   margin: 0 5px;
+}
+
+.qColBtns {
+  max-width: 120px;
+  margin: 5px 0px;
 }
 
 .sameLine input {
   max-width: 70px;
   margin: 0 10px;
+}
+
+.sameCol input {
+  max-width: 70px;
+  max-height: 15px;
+  margin: 0 10px;
+}
+
+.widthQBox {
+  max-width: 300px;
+  padding-right: 20px;
+}
+
+.widthTipLine {
+  max-width: 150px;
 }
 
 .sameCol {

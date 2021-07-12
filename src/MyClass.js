@@ -1,58 +1,70 @@
-import { Component } from "react";
+import { Component, Fragment } from "react";
 import "./styles.css";
-import { CodeQ0, Q001, Q002, Q003, Q004 } from "./Questions";
+import { CodeQ0, SnipQ0 } from "./Questions";
+import {
+  totalSnipQuestions,
+  totalCodeQuestions,
+} from "./Questions/questionData";
 
 export default class MyClass extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      questions: [<Q001 />, <Q002 />, <Q003 />, <Q004 />],
-      chosenQ: -1
+      chosenQ: -1,
     };
   }
 
   render() {
-    const { questions, chosenQ } = this.state;
+    const { chosenQ } = this.state;
+    const codeQBgn = totalSnipQuestions;
+    const totalQuestions = totalSnipQuestions + totalCodeQuestions;
+    const clearQbtn = (
+      <button
+        className="qColBtns"
+        onClick={() => {
+          this.setState({ chosenQ: -1 });
+        }}
+      >
+        Clear Question
+      </button>
+    );
 
     const retval = (
       <>
-        <div className="sameCol">
-          <h4>Understanding Code Snippets</h4>
-          <div className="sameLine">
-            {questions.map((q, i) => {
-              return (
+        <div className="sameLine">
+          <div className="sameCol widthQBox">
+            <h4>Understanding Code Snippets</h4>
+            {[...Array(totalQuestions).keys()].map((i) => (
+              <Fragment key={i}>
+                {i === codeQBgn && (
+                  <>
+                    {chosenQ !== -1 && chosenQ < codeQBgn && clearQbtn}
+                    <h6 className="widthTipLine">
+                      Please use pen/pencil, paper as needed for code-snippet
+                      questions
+                    </h6>
+                    <h4>Developing Code</h4>
+                  </>
+                )}
                 <button
+                  className="qColBtns"
                   key={i}
                   onClick={() => {
                     this.setState({ chosenQ: i });
                   }}
                 >
-                  {"Question " + (i + 1)}
+                  {"Question " + ((i >= codeQBgn ? i - codeQBgn : i) + 1)}
                 </button>
-              );
-            })}
-            {chosenQ !== -1 && (
-              <button
-                onClick={() => {
-                  this.setState({ chosenQ: -1 });
-                }}
-              >
-                Clear Question
-              </button>
-            )}
+              </Fragment>
+            ))}
+            {chosenQ !== -1 && chosenQ >= codeQBgn && clearQbtn}
           </div>
-          <hr />
-          <h6>
-            Please use pen/pencil, paper as needed for code-snippet questions
-          </h6>
-          <hr />
-          {chosenQ !== -1 && questions[chosenQ]}
-          <hr />
-          <hr />
-        </div>
-        <div>
-          <h4>Developing Code</h4>
-          <CodeQ0 />
+          {chosenQ !== -1 &&
+            (chosenQ < codeQBgn ? (
+              <SnipQ0 chosenQ={chosenQ} />
+            ) : (
+              <CodeQ0 chosenQ={chosenQ - codeQBgn} />
+            ))}
         </div>
       </>
     );
