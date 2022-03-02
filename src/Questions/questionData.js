@@ -253,13 +253,13 @@ export const codeQarray = [
         outEltValue: "['a', 'b']",
       },
       {
-        caseNum: 1,
+        caseNum: 2,
         inpEltName: "InputArray",
         inpEltValue: "[ 0, 7, 1, 2, 0, 4 ]",
         outEltValue: "[0]",
       },
       {
-        caseNum: 1,
+        caseNum: 3,
         inpEltName: "InputArray",
         inpEltValue: "[ 1, 7, 0, 7, 4, 0 ]",
         outEltValue: "[0, 7]",
